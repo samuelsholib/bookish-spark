@@ -15,6 +15,17 @@ public class TargetTesting {
 		Thread.sleep(2000);
 		
 		myDriver.findElement(By.name("google_ads_top_frame")).sendKeys("iphone");
+		myDriver.findElement(By.id("staticShellLink")).click();
+		
+		String atTarget = myDriver.getTitle();
+		String title = "Target";
+		myDriver.close();
+		
+		if (atTarget.equalsIgnoreCase(title)) {
+			System.out.println("Test successful");
+		} else {
+			System.out.println("Test failed");
+		}
 
 	}
 
